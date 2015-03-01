@@ -1,0 +1,23 @@
+#right {
+    float: right;
+}
+#left {
+    float: left;
+}
+#egg {
+    color: white;
+    float: left;
+    width: 100px;
+    cursor: default;
+}
+#button {
+    cursor: pointer;
+    color: #0012fc;
+    text-align: center;
+    width: 100px;
+}
+td {
+    border-color: #6495ED;
+    background-color: #BCD2EE;
+    text-align: center;
+}

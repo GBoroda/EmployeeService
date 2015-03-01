@@ -1,0 +1,31 @@
+package com.misha.service;
+
+import com.misha.model.Department;
+import com.misha.model.Employee;
+
+import java.util.List;
+
+public interface AppService {
+
+    List<Employee> getAllEmployees();
+    List<Department> getAllDepartments();
+
+    Employee getEmployeeById(int id);
+    Department getDepartmentById(int id);
+
+    List<Employee>getEmployeesInDepartmentId(int id);
+
+    void calculateAvgSalaryInDepartment();
+    void updateDepartmentAvgSalary(int id, int avgSalary);
+
+    void addEmployee(int departmentId, String firstName, String lastName, int salary);
+    void addEmployee(Employee employee);
+    void addDepartment(String name);
+    void addDepartment(Department department);
+
+    void removeEmployee(int id);
+    void removeDepartment(int id);
+
+    void ediitDepartment(int id, String name);
+
+}
