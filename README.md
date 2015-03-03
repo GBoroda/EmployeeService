@@ -1,5 +1,5 @@
 # EmployeeService
-REST, Spring, Spring MVC, Hibernate, MySQL.
+REST, Spring, Spring MVC, Hibernate, MySQL and my soul
 
 HOW TO RUN:
 
