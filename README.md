@@ -16,3 +16,5 @@ HOW TO RUN:
    /   - for main page
    /employees - to see List with all employees
    /departments - to see List with all departments name
+
+https://github.com/GBoroda/EmployeeService/blob/master/src/main/resources/screen.png?raw=true
