@@ -141,14 +141,20 @@
 
       <dependency>
           <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-log4j12</artifactId>
-          <version>1.6.1</version>
+          <artifactId>slf4j-api</artifactId>
+          <version>1.7.5</version>
       </dependency>
 
       <dependency>
           <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-api</artifactId>
-          <version>1.6.1</version>
+          <artifactId>slf4j-simple</artifactId>
+          <version>1.6.4</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+          <version>1.7.5</version>
       </dependency>
 
       <dependency>
@@ -158,19 +164,38 @@
       </dependency>
 
   </dependencies>
+
     <build>
         <finalName>Employee-webapp</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
+                <version>2.0</version>
                 <configuration>
-                    <url>http://localhost:8080/</url>
-                    <server>TomcatServer</server>
-                    <path>/</path>
-                    <username>admin</username>
-                    <password>password</password>
+                    <url>http://localhost:8080/manager/text</url>
+                    <server>localhost</server>
+                    <path>/EmployeeService</path>
+                    <username>gboroda</username>
+                    <password>132435</password>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <releaseProfiles>prod</releaseProfiles>
+                    <goals>tomcat:deploy</goals>
                 </configuration>
             </plugin>
 

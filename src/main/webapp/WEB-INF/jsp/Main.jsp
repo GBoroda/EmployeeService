@@ -13,7 +13,7 @@
 </head>
 
 <body>
-        <table id="left">
+        <table style="float: left;">
             <tr style="background-color: teal; color: white; text-align: center">
                 <th>id</th>
                 <th>Name</th>
@@ -37,7 +37,7 @@
             </div></td>
         </table>
 
-        <table id="right">
+        <table style="float: right;;">
             <tr style="background-color: teal; color: white; text-align: center;">
                 <th width="30">id</th>
                 <th width="200">First Name</th>
