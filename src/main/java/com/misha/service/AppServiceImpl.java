@@ -42,8 +42,13 @@ public class AppServiceImpl implements AppService {
     }
 
     @Override
-    public void calculateAvgSalaryInDepartment() {
-        this.dao.calculateAvgSalaryInDepartment();
+    public void calculateAvgSalaryInDepartments() {
+        this.dao.calculateAndSetAvgSalaryInDepartments();
+    }
+
+    @Override
+    public Number calculatedAvgSalary(int id) {
+        return this.dao.calculatedAvgSalary(id);
     }
 
     @Override

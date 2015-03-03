@@ -15,7 +15,8 @@ public interface AppDao {
 
     List<Employee>getEmployeesInDepartmentId(int id);
 
-    void calculateAvgSalaryInDepartment();
+    void calculateAndSetAvgSalaryInDepartments();
+    Number calculatedAvgSalary(int id);
     void updateDepartmentAvgSalary(int id, int avgSalary);
 
     void addEmployee(int departmentId, String firstName, String lastName, int salary);

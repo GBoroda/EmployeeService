@@ -15,7 +15,8 @@ public interface AppService {
 
     List<Employee>getEmployeesInDepartmentId(int id);
 
-    void calculateAvgSalaryInDepartment();
+    void calculateAvgSalaryInDepartments();
+    Number calculatedAvgSalary(int id);
     void updateDepartmentAvgSalary(int id, int avgSalary);
 
     void addEmployee(int departmentId, String firstName, String lastName, int salary);

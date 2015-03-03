@@ -25,7 +25,6 @@ public class AppDaoImpl implements AppDao {
     @Override
     @Transactional(readOnly = true)
     public List<Department> getAllDepartments() {
-        calculateAvgSalaryInDepartment();
         return sessionFactory.getCurrentSession().createQuery("FROM Department").list();
     }
 
@@ -50,11 +49,11 @@ public class AppDaoImpl implements AppDao {
 
     @Override
     @Transactional(readOnly = false)
-    public void calculateAvgSalaryInDepartment() {
-        List<Department> departments = sessionFactory.getCurrentSession().createQuery("FROM Department").list();
+    public void calculateAndSetAvgSalaryInDepartments() {
+        List<Department> departments = getAllDepartments();
         for (Department dep : departments) {
             Integer ids = dep.getId();
-            Number x = ((Number) sessionFactory.getCurrentSession().createSQLQuery("SELECT AVG(salary) FROM EMPLOYEE WHERE department_id =" + ids + "").uniqueResult());
+            Number x = calculatedAvgSalary(ids);
             if (x != null) {
                 updateDepartmentAvgSalary(ids, x.intValue());
             }
@@ -63,6 +62,12 @@ public class AppDaoImpl implements AppDao {
                 dep.setAvgSalary(0);
             }
         }
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Number calculatedAvgSalary(int id) {
+        return ((Number) sessionFactory.getCurrentSession().createSQLQuery("SELECT AVG(salary) FROM EMPLOYEE WHERE department_id =" + id + "").uniqueResult());
     }
 
     @Override

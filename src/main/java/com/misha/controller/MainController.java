@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.io.FileOutputStream;
 
 @RestController
 public class MainController {
@@ -18,7 +19,7 @@ public class MainController {
 
     @RequestMapping(value = "/")
     public ModelAndView getPage() {
-        service.calculateAvgSalaryInDepartment();
+        service.calculateAvgSalaryInDepartments();
         List<Employee> employeeList = service.getAllEmployees();
         List<Department> departmentList = service.getAllDepartments();
         ModelAndView modelAndView = new ModelAndView("Main");
@@ -29,7 +30,7 @@ public class MainController {
 
     @RequestMapping(value = "/edit/employee/", method = RequestMethod.GET)
     public ModelAndView editEmployeePage() {
-        service.calculateAvgSalaryInDepartment();
+        service.calculateAvgSalaryInDepartments();
         List<Employee> employeeList = service.getAllEmployees();
         List<Department> departmentList = service.getAllDepartments();
         ModelAndView modelAndView = new ModelAndView("Edit");
@@ -101,13 +102,13 @@ public class MainController {
     @RequestMapping(value = "/add/employee/{departmentId}/{firstName}/{lastName}/{salary}", method = RequestMethod.POST, headers = "Accept=application/json")
     public void addEmployee(@PathVariable int departmentId,@PathVariable String firstName,@PathVariable String lastName,@PathVariable int salary) {
         service.addEmployee(departmentId, firstName, lastName, salary);
-        service.calculateAvgSalaryInDepartment();
+        service.calculateAvgSalaryInDepartments();
     }
 
     @RequestMapping(value = "/remove/employee/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
     public void removeEmployee(@PathVariable int id) {
         service.removeEmployee(id);
-        service.calculateAvgSalaryInDepartment();
+        service.calculateAvgSalaryInDepartments();
     }
 
     @RequestMapping(value = "/remove/department/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")

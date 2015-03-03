@@ -26,5 +26,8 @@
         <module name="EmployeeService" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="EmployeeService" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
