@@ -21,6 +21,7 @@ public interface AppService {
 
     void addEmployee(int departmentId, String firstName, String lastName, int salary);
     void addEmployee(Employee employee);
+
     void addDepartment(String name);
     void addDepartment(Department department);
 

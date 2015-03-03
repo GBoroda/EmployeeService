@@ -126,6 +126,4 @@ public class AppDaoImpl implements AppDao {
         sessionFactory.getCurrentSession().createSQLQuery("DELETE FROM EMPLOYEE WHERE department_id =" + id).executeUpdate();
         sessionFactory.getCurrentSession().createQuery("DELETE FROM Department c WHERE c.id = " + id).executeUpdate();
     }
-
-
 }

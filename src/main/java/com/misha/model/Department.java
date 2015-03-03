@@ -53,4 +53,5 @@ public class Department {
     public String toString() {
         return "Department[" + id + " : " +name + " : " + avgSalary + ")";
     }
+
 }

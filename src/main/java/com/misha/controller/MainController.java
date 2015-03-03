@@ -12,7 +12,7 @@ import java.util.List;
 import java.io.FileOutputStream;
 
 @RestController
-public class MainController {
+public class MainController  {
 
     @Autowired
     private AppService service;
@@ -120,7 +120,5 @@ public class MainController {
     public void editDepartment(@PathVariable int id, @PathVariable String name) {
         service.ediitDepartment(id, name);
     }
-
-
 
 }

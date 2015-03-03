@@ -37,6 +37,7 @@
     </div></td>
 </table>
 
+
 <table style="float: right">
     <tr style="background-color: teal; color: white; text-align: center;">
         <th width="30">id</th>

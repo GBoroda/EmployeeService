@@ -19,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:app-servlet.xml"})
-public class MainControllerTest {
+public class MainControllerTest  {
 
     @Mock
     private AppService service;

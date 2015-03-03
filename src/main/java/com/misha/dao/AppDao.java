@@ -28,8 +28,4 @@ public interface AppDao {
     void removeDepartment(int id);
 
     void ediitDepartment(int id, String name);
-
-
-
-
 }

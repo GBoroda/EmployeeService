@@ -15,7 +15,7 @@ import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:app-servlet.xml"})
-public class AppServiceImplTest {
+public class AppServiceImplTest  {
 
     @Autowired
     private AppService appService;

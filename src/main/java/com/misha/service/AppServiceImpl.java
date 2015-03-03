@@ -90,4 +90,5 @@ public class AppServiceImpl implements AppService {
     public void ediitDepartment(int id, String name) {
         this.dao.ediitDepartment(id, name);
     }
+
 }

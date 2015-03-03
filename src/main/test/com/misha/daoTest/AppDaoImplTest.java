@@ -15,7 +15,7 @@ import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:app-servlet.xml"})
-public class AppDaoImplTest {
+public class AppDaoImplTest  {
 
     @Autowired
     private AppDao dao;
