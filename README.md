@@ -1,5 +1,5 @@
 # EmployeeService
-REST, Spring, Spring MVC, Hibernate, MySQL.
+REST, Spring, Spring MVC, Hibernate, MySQL and my soul
 
 HOW TO RUN:
 
@@ -16,3 +16,7 @@ HOW TO RUN:
    /   - for main page
    /employees - to see List with all employees
    /departments - to see List with all departments name
+
+
+What we got:
+[![screen](https://github.com/GBoroda/EmployeeService/blob/master/src/main/resources/screen.png)](https://github.com/GBoroda/EmployeeService/blob/master/src/main/resources/screen.png)
