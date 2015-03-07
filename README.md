@@ -7,8 +7,7 @@ HOW TO RUN:
 2. use "mmvn idea:idea" for creating project in Intellij Idea
 3. Create Database with name "test", username - "root" and password - "132435"
 4. Insert test data to database in console. You can find it in EmployeeService/src/main/resources/testDataForDatabase.txt
-5. create Tomcat user with name:"gboroda" password:"132435" and roles:"manager-gui, manager-script"
-6. use "mvn tomcat7:deploy" for deploying webapp into tomcat and open in Tomcat Web Application Manager application named "EmployeeService"
+5. use "mvn package" for creating war file and deploy him in Tomcat Web Application Manager or use "mvn tomcat7:deploy"
 7. or open project in Idea.
 8. Create MySQL Dataabase connection.
 9. Create Tomcat server for that project in your IDE and run it.
