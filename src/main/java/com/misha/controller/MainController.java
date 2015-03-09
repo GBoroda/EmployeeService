@@ -9,15 +9,19 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-import java.io.FileOutputStream;
 
 @RestController
 public class MainController  {
 
     @Autowired
     private AppService service;
-
+    
     @RequestMapping(value = "/")
+    public ModelAndView getMainPage() {
+        return new ModelAndView("redirect:/main");
+    }
+
+    @RequestMapping(value = "/main")
     public ModelAndView getPage() {
         service.calculateAvgSalaryInDepartments();
         List<Employee> employeeList = service.getAllEmployees();
@@ -43,7 +47,7 @@ public class MainController  {
     public ModelAndView addDepartment(@ModelAttribute("com/misha/model/Department.java") Department department, Model model) {
         model.addAttribute("name", department.getName());
         service.addDepartment(department);
-        return new ModelAndView("redirect:/");
+        return new ModelAndView("redirect:/main");
     }
 
     @RequestMapping(value = "/employee/add", method = RequestMethod.POST)
@@ -53,19 +57,19 @@ public class MainController  {
         model.addAttribute("lastName", employee.getLastName());
         model.addAttribute("salary", employee.getSalary());
         service.addEmployee(employee);
-        return new ModelAndView("redirect:/");
+        return new ModelAndView("redirect:/main");
     }
 
     @RequestMapping(value = "/remove/employee/{id}", method = RequestMethod.DELETE)
     public ModelAndView removeEmployeeRedirect(@PathVariable("id") int id) {
         service.removeEmployee(id);
-        return new ModelAndView("redirect:/");
+        return new ModelAndView("redirect:/main");
     }
 
     @RequestMapping(value = "/remove/department/{id}", method = RequestMethod.DELETE)
     public ModelAndView removeDepartmentRedirect(@PathVariable("id") int id) {
         service.removeDepartment(id);
-        return new ModelAndView("redirect:/");
+        return new ModelAndView("redirect:/main");
     }
 
     // RESTful web service stuff

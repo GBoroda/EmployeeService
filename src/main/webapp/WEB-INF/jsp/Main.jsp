@@ -25,7 +25,7 @@
                     <td>${dep.id}</td>
                     <td width="175">${dep.name}</td>
                     <td>${dep.avgSalary}</td>
-                    <td><form:form method="DELETE" action="/remove/department/${dep.id}"><input type="submit" value="delete"></form:form></td>
+                    <td><form:form method="DELETE" action="/Employee-webapp/remove/department/${dep.id}"><input type="submit" value="delete"></form:form></td>
                 </tr>
             </c:forEach>
             <td style="background-color: #ffffff"></td>
@@ -54,7 +54,7 @@
                     <td>${employee.lastName}</td>
                     <td>${employee.salary}</td>
                     <td>${employee.departmentId}</td>
-                    <td><form:form method="DELETE" action="/remove/employee/${employee.id}"><input type="submit" value="delete"></form:form></td>
+                    <td><form:form method="DELETE" action="/Employee-webapp/remove/employee/${employee.id}"><input type="submit" value="delete"></form:form></td>
                 </tr>
             </c:forEach>
             <td>
@@ -74,7 +74,7 @@
                     </p><p>
                     <input type="submit" value="Add"/></p>
                 </form>
-                <P><form:form method="GET" action="/edit/employee/"><input type="submit" value="edit page"></form:form></p>
+                <P><form:form method="GET" action="/Employee-webapp/edit/employee/"><input type="submit" value="edit page"></form:form></p>
             </td>
         </table>
 </body>

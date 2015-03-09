@@ -82,6 +82,16 @@ public class MainControllerTest  {
     }
 
     @Test
+    public void testRemoveEmployee() throws Exception {
+        mockMvc.perform(delete("/remove/employee/{id}/", 1)).andExpect(status().is3xxRedirection());
+    }
+
+    @Test
+    public void testRemoveDepartment() throws Exception {
+        mockMvc.perform(delete("/remove/department/{id}/", 1)).andExpect(status().is3xxRedirection());
+    }
+
+    @Test
     public void testGetDepartmentByID() throws Exception {
         mockMvc.perform(get("/department/{id}/", 1)).andExpect(status().isOk());
     }
@@ -101,15 +111,6 @@ public class MainControllerTest  {
         mockMvc.perform(post("/add/employee/{departmentId}/{firstName}/{lastName}/{salary}/", 1, "test", "tester", 200)).andExpect(status().isOk());
     }
 
-    @Test
-    public void testRemoveEmployee() throws Exception {
-        mockMvc.perform(delete("/remove/employee/{id}/", 1)).andExpect(status().is3xxRedirection());
-    }
-
-    @Test
-    public void testRemoveDepartment() throws Exception {
-        mockMvc.perform(delete("/remove/department/{id}/", 1)).andExpect(status().is3xxRedirection());
-    }
 
     @Test
     public void testEditDepartment() throws Exception {
