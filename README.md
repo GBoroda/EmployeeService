@@ -4,7 +4,7 @@ REST, Spring, Spring MVC, Hibernate, MySQL and my soul
 HOW TO RUN:
 
 1. Download and open this project from  github. 
-2. use "mmvn idea:idea" for creating project in Intellij Idea
+2. use "mvn idea:idea" for creating project in Intellij Idea
 3. change database.properties for your databse. for default it will be: name "test", username - "root" and password - "132435"
 4. Insert test data to database in console. You can find it in EmployeeService/src/main/resources/testDataForDatabase.txt
 5. Use "mvn tomcat7:deploy -Dtomcat.username=YOUR_USERNAME -Dtomcat.password=YOUR_PASSWORD" to deploy this app in tomcat server. Or deploy .war file from tomcat manager page. 
